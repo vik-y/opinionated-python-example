@@ -1,6 +1,9 @@
 from celery import Celery
+
 from .scraper import fetch_data, process_data
-app = Celery('tasks', broker='redis://redis:6379/0')
+
+app = Celery("tasks", broker="redis://redis:6379/0")
+
 
 @app.task
 def scrape_and_process(url: str):
