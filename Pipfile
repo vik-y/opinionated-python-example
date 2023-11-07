@@ -13,6 +13,7 @@ requests = "*"
 tenacity = "*"
 celery = "*"
 beautifulsoup4 = "*"
+python-dotenv = "*"
 
 [requires]
 python_version = "3.11"
