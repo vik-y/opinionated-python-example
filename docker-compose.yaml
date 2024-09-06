@@ -4,7 +4,7 @@ services:
   web:
     build: .
     volumes:
-      - ./app:/app
+      - ./:/app
     command: pipenv run python main.py http://example.com
     depends_on:
       - redis
@@ -15,7 +15,7 @@ services:
   worker:
     build: .
     volumes:
-      - ./app:/app
+      - ./:/app
     command: pipenv run celery -A tasks worker --loglevel=info
     depends_on:
       - redis
